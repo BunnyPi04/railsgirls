@@ -13,7 +13,7 @@
   
   <p>
     <strong>Picture:</strong>
-    <%= image_tag(@idea.picture_url) if @idea.picture.present? %>
+    <%= image_tag(@idea.picture_url, :class => 'idea_picture' ) if @idea.picture.present?%>
     <h3>Comments</h3>
   <% @comments.each do |comment| %>
     <div>
@@ -30,3 +30,6 @@
     <div class="btn"> <img src="https://cdn2.iconfinder.com/data/icons/social-messaging-productivity-1/128/reply-128.png"/> <%= link_to 'Back', ideas_path %> </div>
   </div>
 </div>
+<style>
+  .idea_picture {width:100%;}
+</style>
