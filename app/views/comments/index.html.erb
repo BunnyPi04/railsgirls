@@ -1,31 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Comments</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User name</th>
-      <th>Body</th>
-      <th>Idea</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @comments.each do |comment| %>
+<div class="block">
+  <p id="notice"><%= notice %></p>
+  
+  <h1>Comments</h1>
+  
+  <table>
+    <thead>
       <tr>
-        <td><%= comment.user_name %></td> 
-        <td><%= comment.body %></td>
-        <td><%= comment.idea_id %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>User name</th>
+        <th>Body</th>
+        <th>Idea</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Comment', new_comment_path %>
+    </thead>
+  
+    <tbody>
+      <% @comments.each do |comment| %>
+        <tr>
+          <td style="vertical-align: top;"><%= comment.user_name %></td> 
+          <td style="text-align: justify;"><%= comment.body %></td>
+          <td style="vertical-align: top;"><%= comment.idea_id %></td>
+          <td style="vertical-align: top;"><%= link_to 'Show', comment %></td>
+          <td style="vertical-align: top;"><%= link_to 'Edit', edit_comment_path(comment) %></td>
+          <td style="vertical-align: top;"><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <br>
+  <div class="row">
+    <div class="btn"> <img src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-plain/485/07_plus-128.png"/><%= link_to 'New Comment', new_comment_path %> </div>
+  </div>
+</div>

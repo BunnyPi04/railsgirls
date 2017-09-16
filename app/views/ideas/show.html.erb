@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @idea.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @idea.description %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %>
-  <h3>Comments</h3>
-<% @comments.each do |comment| %>
-  <div>
-    <strong><%= comment.user_name %></strong>
-    <br />
-    <p><%= comment.body %></p>
-    <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<div class="block">
+  <p id="notice"><%= notice %></p>
+  
+  <p>
+    <strong>Name:</strong>
+    <%= @idea.name %>
+  </p>
+  
+  <p>
+    <strong>Description:</strong>
+    <%= @idea.description %>
+  </p>
+  
+  <p>
+    <strong>Picture:</strong>
+    <%= image_tag(@idea.picture_url) if @idea.picture.present? %>
+    <h3>Comments</h3>
+  <% @comments.each do |comment| %>
+    <div>
+      <strong><%= comment.user_name %></strong>
+      <br />
+      <p><%= comment.body %></p>
+      <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
+  <% end %>
+  <%= render partial: 'comments/form', locals: { comment: @comment } %>
+  </p>
+  <div class="row">
+    <div class="btn"> <img src="https://cdn3.iconfinder.com/data/icons/edition/100/pen_2-128.png"/><%= link_to 'Edit', edit_idea_path(@idea) %> | </div>
+    <div class="btn"> <img src="https://cdn2.iconfinder.com/data/icons/social-messaging-productivity-1/128/reply-128.png"/> <%= link_to 'Back', ideas_path %> </div>
   </div>
-<% end %>
-<%= render partial: 'comments/form', locals: { comment: @comment } %>
-</p>
-
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+</div>

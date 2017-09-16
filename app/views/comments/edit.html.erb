@@ -1,6 +1,9 @@
-<h1>Editing Comment</h1>
+<div class="block">
+    <h1>Editing Comment</h1>
 
-<%= render 'form', comment: @comment %>
-
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>
+    <%= render 'form', comment: @comment %>
+    <div class="row">
+        <div class="btn"> <img src="https://cdn3.iconfinder.com/data/icons/edition/100/pen_2-128.png"/> <%= link_to 'Show', @comment %> | </div>
+        <div class="btn"> <img src="https://cdn2.iconfinder.com/data/icons/social-messaging-productivity-1/128/reply-128.png"/> <%= link_to 'Back', comments_path %> </div>
+    </div>
+</div>

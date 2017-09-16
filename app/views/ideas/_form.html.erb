@@ -26,7 +26,19 @@
     <%= form.file_field :picture, id: :idea_picture %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="row actions" style="padding: 0 15px;">
+    <%= form.submit :class => 'btn btn-primary btn2 col-md-3 col-md-offset-9'%>
   </div>
 <% end %>
+<style>
+  label {
+    width: 30%;
+    float: left;
+  }
+  input, textarea {
+    width: 70%;
+  }
+  .btn2 {
+    background-color: #428bca;
+  }
+</style>
