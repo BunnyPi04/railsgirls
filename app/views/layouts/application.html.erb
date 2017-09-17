@@ -29,18 +29,28 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a class="head-item-1st active" href="/ideas" style=" font-family: Helvetica, Arial, sans-serif; color: white;">Ideas</a></li>
-            <li><a  class="head-item-2nd" href="/pages/info"  style="color: white;  font-family: Helvetica, Arial, sans-serif">Info</a></li>
-          <p class="navbar-text pull-right" style="color: white;">
-            <% if user_signed_in? %>
-              <%= image_tag current_user.gravatar_url, :class => 'ava' %>
-              Logged in as <strong><%= current_user.email %></strong>
-              <%= link_to "Edit profile", edit_user_registration_path, :class => 'navbar-link', :class => 'navlink' %> |
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', :class => 'navlink'  %>
-            <% else %>
-              <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link', :class => 'navlink'  %> |
-              <%= link_to "Login", new_user_session_path, :class => 'navbar-link', :class => 'navlink'  %>
-            <% end %>
+            <li><a class="head-item-2nd" href="/pages/info"  style="color: white;  font-family: Helvetica, Arial, sans-serif">Info</a></li>
           </ul>
+          <p class="navbar-text pull-right" style="color: white;">
+              <div class="col-md-1 dropdown" style="float: right">
+              <% if user_signed_in? %>
+                <div class="dropdown" style="float: right; color: white;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" style="color: white">
+                  <%= image_tag current_user.gravatar_url, :class => 'ava', :style => 'width: 30px;' %> <strong><%= current_user.email %></strong></button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <ul style="padding:0; margin:0; list-style: none;">
+                      <li style="padding: 10px 20px;cursor:pointer;"><%= link_to "Edit profile", edit_user_registration_path, :class => 'dropdown-item' %></li>
+                      <li style="padding: 10px 20px;"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %></li>
+                    </ul>
+                  </div>
+                </div>
+  
+              <% else %>
+              
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link', :class => 'navlink', :class => 'dropdown-item'  %> |
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link', :class => 'navlink', :class => 'dropdown-item'  %>
+              <% end %>
+              </div></p>
         </div>
       </div>
 </nav>

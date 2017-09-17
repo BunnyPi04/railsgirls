@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hangpt248
+  api_key: '911256984684889'
+  api_secret: LYb9QG5Q0iY7XigJpdLs353eXpA
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hangpt248
+  api_key: '911256984684889'
+  api_secret: LYb9QG5Q0iY7XigJpdLs353eXpA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hangpt248
+  api_key: '911256984684889'
+  api_secret: LYb9QG5Q0iY7XigJpdLs353eXpA
+  enhance_image_tag: true
+  static_image_support: false
