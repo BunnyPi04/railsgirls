@@ -2,6 +2,7 @@
 
 <h1>Ideas</h1>
 <% @ideas.each do |idea| %>
+<% @cmtCount = 0 %>
 <div class="block">
   <div class="row idea-title">
     <img src="https://cdn4.iconfinder.com/data/icons/education-and-school-flat-icons/512/lightbulb_lamp_idea_ideas_education_equipment_learning_object_school_item_college_flat_icon_symbol-128.png" />
@@ -9,6 +10,8 @@
   </div>
   <div class="row idea-img">
     <img src="<%= idea.picture %>"/>
+     <% idea.comments.each do |cmt| @cmtCount += 1 end%>
+    <p><%= @cmtCount%> Comments</p>
     <p><b>Description</b></p>
     <p><%= idea.description %></p>
   </div>

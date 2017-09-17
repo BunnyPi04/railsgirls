@@ -20,7 +20,12 @@
     <%= form.label :body %>
     <%= form.text_area :body, id: :comment_body %>
   </div>
-
+  
+  <div class="field">
+  <%= form.label :picture %><br>
+  <%= form.file_field :picture %>
+  </div>
+  
   <%= form.hidden_field :idea_id %>
 
   <div class="actions">
