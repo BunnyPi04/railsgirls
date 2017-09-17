@@ -1,0 +1,26 @@
+<%= form_with(model: thank, local: true) do |form| %>
+  <% if thank.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(thank.errors.count, "error") %> prohibited this thank from being saved:</h2>
+
+      <ul>
+      <% thank.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_name %>
+    <%= form.text_field :user_name, id: :thank_user_name %>
+  </div>
+  
+  
+<%= form.hidden_field :idea_id %>
+
+
+  <div class="actions">
+    <%= form.submit  :class => 'btn btn-primary btn2 col-md-3 col-md-offset-9'%>
+  </div>
+<% end %>

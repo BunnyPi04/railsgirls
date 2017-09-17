@@ -34,3 +34,4 @@ th {          border-bottom: 1px solid #DDD; }
 .btn:hover {  text-decoration: underline;}
 .btn img {    width: 20px;              margin: 0px 10px;}
 .block {      background-color: white;  padding: 15px;                 margin-bottom: 15px;                  border: 1px solid #dddfe2;}
+.mini {       display: inline-block;}

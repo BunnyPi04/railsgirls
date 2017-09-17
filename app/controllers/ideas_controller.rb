@@ -6,6 +6,7 @@ class IdeasController < ApplicationController
   def index
     @ideas = Idea.all
     @cmtCount = 0
+    @thankCount = 0
   end
 
   # GET /ideas/1
@@ -13,6 +14,9 @@ class IdeasController < ApplicationController
   def show
     @comments = @idea.comments.all
     @comment = @idea.comments.build
+    
+    @thanks = @idea.thanks.all
+    @thank = @idea.thanks.build
   end
 
   # GET /ideas/new

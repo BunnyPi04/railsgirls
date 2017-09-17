@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Thanks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User name</th>
+      <th>Idea</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thanks.each do |thank| %>
+      <tr>
+        <td><%= thank.user_name %></td>
+        <td><%= thank.idea_id %></td>
+        <td><%= link_to 'Show', thank %></td>
+        <td><%= link_to 'Edit', edit_thank_path(thank) %></td>
+        <td><%= link_to 'Destroy', thank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thank', new_thank_path %>
