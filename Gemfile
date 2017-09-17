@@ -19,6 +19,8 @@ end
 gem 'carrierwave'
 
 gem 'mini_magick', '3.8.0'
+gem 'devise'
+gem 'gravtastic'
 
 gem 'net-ssh'
 gem 'puma', '~> 3.7'

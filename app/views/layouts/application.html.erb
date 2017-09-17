@@ -23,13 +23,23 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/" style="color: white; font-family: Helvetica, Arial, sans-serif; font-size: 14px;">
-            <img src="https://cdn3.iconfinder.com/data/icons/pet-shop-flat-colorful/614/5178_-_Paws-128.png" style="width: 50px; margin-top: -15px; float: left;"/>
+            <img src="https://cdn3.iconfinder.com/data/icons/pet-shop-flat-colorful/614/5178_-_Paws-128.png" style="width: 50px; margin-top: -12px; float: left;"/>
             The Idea app</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a class="head-item-1st active" href="/ideas" style=" font-family: Helvetica, Arial, sans-serif; color: white;">Ideas</a></li>
             <li><a  class="head-item-2nd" href="/pages/info"  style="color: white;  font-family: Helvetica, Arial, sans-serif">Info</a></li>
+          <p class="navbar-text pull-right" style="color: white;">
+            <% if user_signed_in? %>
+              <%= image_tag current_user.gravatar_url, :class => 'ava' %>
+              Logged in as <strong><%= current_user.email %></strong>
+              <%= link_to "Edit profile", edit_user_registration_path, :class => 'navbar-link', :class => 'navlink' %> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', :class => 'navlink'  %>
+            <% else %>
+              <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link', :class => 'navlink'  %> |
+              <%= link_to "Login", new_user_session_path, :class => 'navbar-link', :class => 'navlink'  %>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -43,6 +53,12 @@
       </ul>
     </div>
     <div class="col-md-6 col-md-offset-2" style="padding: 0px;">
+      <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
     <%= yield %></div>
   </div>
   
