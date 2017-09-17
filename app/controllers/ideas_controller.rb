@@ -4,7 +4,7 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    @ideas = Idea.all.order(created_at: :desc)
     @cmtCount = 0
     @thankCount = 0
   end
